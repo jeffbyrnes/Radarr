@@ -1,8 +1,6 @@
 <Project>
 
-  <Target Name="FixBindingRedirects"
-          AfterTargets="ResolveAssemblyReferences"
-          BeforeTargets="GenerateBindingRedirects">
+  <Target Name="FixBindingRedirects" AfterTargets="ResolveAssemblyReferences" BeforeTargets="GenerateBindingRedirects">
 
     <ItemGroup Condition="'$(TargetFrameworkIdentifier)' == '.NETFramework' and '$(RuntimeIdentifier)' == 'linux-x64'">
       <SuggestedBindingRedirects Remove="System.Net.Http, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
